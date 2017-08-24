@@ -8,8 +8,10 @@ app.get('/', (req, res) => {
   res.render(`index`);
 });
 
-app.get('/hello', (req, res) => {
-  res.send(`<h1>Hello there</h1>`);
+app.get('/cards', (req, res) => {
+  res.locals.prompt = "Who is buried in Grant's tomb?";
+  res.locals.hint = "Think about whose tomb it is.";
+  res.render(`card`);
 });
 
 app.listen(3000, () => {
